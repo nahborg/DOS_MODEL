@@ -38,7 +38,8 @@
       const loader = new GLTFLoader();
       let model;
 
-      loader.load('https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/DamagedHelmet/glTF/DamagedHelmet.gltf', (gltf) => {
+      // Load your own model (DOS_MODEL.glb should be in the same directory)
+      loader.load('DOS_MODEL.glb', (gltf) => {
         model = gltf.scene;
         model.scale.set(2, 2, 2);
         scene.add(model);
