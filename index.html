@@ -38,12 +38,15 @@
       const loader = new GLTFLoader();
       let model;
 
-      // Load your own model (DOS_MODEL.glb should be in the same directory)
       loader.load('DOS_MODEL.glb', (gltf) => {
         model = gltf.scene;
         model.scale.set(2, 2, 2);
         scene.add(model);
         outlinePass.selectedObjects = [model];
+      },
+      undefined,
+      (error) => {
+        console.error('Error loading model:', error);
       });
 
       // Postprocessing
